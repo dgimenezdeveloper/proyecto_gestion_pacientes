@@ -3,26 +3,9 @@ El programa es un sistema de gestión de pacientes y hospitales que permite real
 ### Flujo del Programa
 
 1. **Inicio del Programa**:
-   - El programa comienza ejecutando el archivo 
-
-main.py
-
-, que importa el módulo 
-
-menu
-
- y llama a la función 
-
-menu_principal()
-
-.
-
+   - El programa comienza ejecutando el archivo main.py, que importa el módulo menu  y llama a la función menu_principal() para mostrar el menú principal al usuario.
 2. **Menú Principal**:
-   - El 
-
-menu_principal()
-
- presenta al usuario un menú con cinco opciones:
+   - El menu_principal() presenta al usuario un menú con cinco opciones:
      1. Gestión de Pacientes
      2. Operaciones con Pacientes
      3. Gestión de Hospitales
@@ -30,56 +13,24 @@ menu_principal()
      5. Salir
 
 3. **Gestión de Pacientes**:
-   - Si el usuario selecciona la opción 1, se llama a 
-
-menu_gestion_pacientes(sistema_gestion)
-
-.
+   - Si el usuario selecciona la opción 1, se llama a menu_gestion_pacientes(sistema_gestion).
    - Este menú permite agregar, eliminar, obtener información y actualizar información de pacientes.
-   - Utiliza la clase 
-
-SistemaGestionPacientes
-
- para gestionar las operaciones.
+   - Utiliza la clase SistemaGestionPacientes para gestionar las operaciones.
 
 4. **Operaciones con Pacientes**:
-   - Si el usuario selecciona la opción 2, se llama a 
-
-menu_operaciones_pacientes(sistema_gestion)
-
-.
+   - Si el usuario selecciona la opción 2, se llama a menu_operaciones_pacientes(sistema_gestion).
    - Este menú permite registrar, buscar y eliminar pacientes por DNI.
-   - También utiliza la clase 
-
-SistemaGestionPacientes
-
-.
+   - También utiliza la clase SistemaGestionPacientes.
 
 5. **Gestión de Hospitales**:
-   - Si el usuario selecciona la opción 3, se llama a 
-
-menu_gestion_hospitales(grafo)
-
-.
+   - Si el usuario selecciona la opción 3, se llama a menu_gestion_hospitales(grafo).
    - Este menú permite agregar hospitales, agregar conexiones entre hospitales, buscar rutas entre hospitales y calcular distancias.
-   - Utiliza la clase 
-
-Grafo
-
- para gestionar las operaciones.
+   - Utiliza la clase Grafo para gestionar las operaciones.
 
 6. **Gestión de Diagnósticos**:
-   - Si el usuario selecciona la opción 4, se llama a 
-
-menu_gestion_diagnosticos(grafo_diagnostico)
-
-.
+   - Si el usuario selecciona la opción 4, se llama a menu_gestion_diagnosticos(grafo_diagnostico).
    - Este menú permite buscar los pasos necesarios para llegar a un diagnóstico a partir de un síntoma.
-   - Utiliza la clase 
-
-Grafo
-
- para gestionar las operaciones.
+   - Utiliza la clase GrafoDiagnostico para gestionar las operaciones.
 
 7. **Salir**:
    - Si el usuario selecciona la opción 5, el programa imprime un mensaje de salida y termina.
