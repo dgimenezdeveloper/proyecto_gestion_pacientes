@@ -10,8 +10,8 @@ Este programa es un sistema de gestión de pacientes y hospitales que permite re
 
 1. Clona el repositorio:
     ```sh
-    git clone <URL_DEL_REPOSITORIO>
-    cd <NOMBRE_DEL_REPOSITORIO>
+    git clone git@github.com:dgimenezdeveloper/proyecto_gestion_pacientes.git
+    cd proyecto_gestion_pacientes
     ```
 
 2. Instala las dependencias necesarias (si las hay).
@@ -48,6 +48,17 @@ Este programa es un sistema de gestión de pacientes y hospitales que permite re
 2. Selecciona la opción deseada en el menú.
 
 3. Sigue las instrucciones interactivas para realizar las operaciones disponibles.
+
+## Contribuciones
+Las contribuciones son bienvenidas. Si deseas contribuir, por favor sigue estos pasos:
+1. Haz un fork del repositorio.
+2. Crea una nueva rama (\`git checkout -b feature/nueva-caracteristica\`).
+3. Realiza tus cambios y haz commit (\`git commit -am 'Añadir nueva característica'\`).
+4. Sube tus cambios (\`git push origin feature/nueva-caracteristica\`).
+5. Abre un Pull Request.
+
+## Licencia
+Este proyecto está bajo la Licencia MIT. Consulta el archivo \`LICENSE\` para más detalles."
 
 ## Estructura del Proyecto
 
