@@ -21,7 +21,8 @@ class SistemaGestionPacientes:
         return False
 
     def obtener_paciente(self, id):
-        return self.gestion_pacientes.obtener_paciente(id)
+        if self.gestion_pacientes.obtener_paciente(id) and self.arbol.buscar(id):
+            return self.gestion_pacientes.obtener_paciente(id)
 
     def actualizar_paciente(self, id, nombre=None, fecha_nac=None, historial_enfermedades=None, medicamentos=None):
         if self.gestion_pacientes.actualizar_paciente(id, nombre, fecha_nac, historial_enfermedades, medicamentos):

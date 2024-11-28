@@ -63,24 +63,66 @@ def menu_gestion_pacientes(sistema_gestion):
             medicamentos = solicitar_lista("Ingrese medicamentos (separados por comas): ")
             paciente = Paciente(dni, nombre, fecha_nac, historial_enfermedades, medicamentos)
             sistema_gestion.agregar_paciente(paciente)
+            os.system('clear')
+            print(f"Paciente agregado con éxito.")
+            input("Presione Enter para continuar...")
         elif opcion == "2":
             dni = solicitar_dni()
-            sistema_gestion.eliminar_paciente(dni)
+            paciente = sistema_gestion.obtener_paciente(dni)
+            if paciente:
+                print(f"Datos del paciente:\n{paciente}")
+                confirmacion = input("¿Está seguro que desea eliminar este paciente? (s/n): ").strip().lower()
+                if confirmacion == 's':
+                    if sistema_gestion.eliminar_paciente(dni):
+                        print("Paciente eliminado con éxito.")
+                    else:
+                        print("Error al eliminar el paciente.")
+                else:
+                    print("Eliminación cancelada.")
+            else:
+                print("El paciente no existe.")
+            input("Presione Enter para continuar...")
         elif opcion == "3":
             dni = solicitar_dni()
             paciente = sistema_gestion.obtener_paciente(dni)
             print(paciente)
+            input("Presione Enter para continuar...")
         elif opcion == "4":
             dni = solicitar_dni()
-            nombre = solicitar_nombre()
-            fecha_nac = solicitar_fecha_nacimiento()
-            historial_enfermedades = solicitar_lista("Ingrese historial de enfermedades (separadas por comas): ")
-            medicamentos = solicitar_lista("Ingrese medicamentos (separados por comas): ")
-            sistema_gestion.actualizar_paciente(dni, nombre, fecha_nac, historial_enfermedades, medicamentos)
+            sub_opcion = None
+            while sub_opcion != "5":
+                os.system('clear')
+                print("\nActualizar Información del Paciente")
+                print("1. Actualizar nombre")
+                print("2. Actualizar fecha de nacimiento")
+                print("3. Actualizar historial de enfermedades")
+                print("4. Actualizar medicamentos")
+                print("5. Volver al menú anterior")
+                sub_opcion = input("Seleccione una opción: ")
+
+                if sub_opcion == "1":
+                    nombre = solicitar_nombre()
+                    sistema_gestion.actualizar_paciente(dni, nombre=nombre)
+                elif sub_opcion == "2":
+                    fecha_nac = solicitar_fecha_nacimiento()
+                    sistema_gestion.actualizar_paciente(dni, fecha_nac=fecha_nac)
+                elif sub_opcion == "3":
+                    historial_enfermedades = solicitar_lista("Ingrese historial de enfermedades (separadas por comas): ")
+                    sistema_gestion.actualizar_paciente(dni, historial_enfermedades=historial_enfermedades)
+                elif sub_opcion == "4":
+                    medicamentos = solicitar_lista("Ingrese medicamentos (separados por comas): ")
+                    sistema_gestion.actualizar_paciente(dni, medicamentos=medicamentos)
+                elif sub_opcion == "5":
+                    print("Volviendo al menú anterior...")
+                else:
+                    print("Opción no válida. Intente de nuevo.")
+                input("Presione Enter para continuar...")
         elif opcion == "5":
             print("Volviendo al Menú Principal...")
         else:
             print("Opción no válida. Intente de nuevo.")
+        input("Presione Enter para continuar...")
+        os.system('clear')
 
 def menu_operaciones_pacientes(sistema_gestion):
     opcion = None
