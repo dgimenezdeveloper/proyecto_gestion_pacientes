@@ -20,7 +20,7 @@ class Paciente:
         self.id = id
         self.nombre = nombre
         self.fecha_nac = datetime.strptime(fecha_nac, "%Y-%m-%d")  # Convierte la cadena a datetime
-        self.edad = self.calcular_edad()
+        self.edad = self.calcular_edad() # Calcular despues
         self.historial_enfermedades = historial_enfermedades if historial_enfermedades else []
         self.medicamentos = medicamentos if medicamentos else []
 
@@ -170,17 +170,33 @@ class GestionPacientes:
         """
         paciente = self.obtener_paciente(id)
         if paciente:
-            if nombre:
-                paciente.nombre = nombre
-            if fecha_nac:
-                paciente.fecha_nac = datetime.strptime(fecha_nac, "%Y-%m-%d")
-                paciente.edad = paciente.calcular_edad()
-            if historial_enfermedades:
-                paciente.historial_enfermedades.extend(historial_enfermedades)
-            if medicamentos:
-                paciente.medicamentos.extend(medicamentos)
+            self._actualizar_nombre(paciente, nombre)
+            self._actualizar_fecha_nacimiento(paciente, fecha_nac)
+            self._actualizar_historial(paciente, historial_enfermedades)
+            self._actualizar_medicamentos(paciente, medicamentos)
             return True
         return False
+    
+    def _actualizar_nombre(self, paciente, nombre):
+        """Actualiza el nombre del paciente si se proporciona uno nuevo."""
+        if nombre:
+            paciente.nombre = nombre
+
+    def _actualizar_fecha_nacimiento(self, paciente, fecha_nac):
+        """Actualiza la fecha de nacimiento del paciente si se proporciona una nueva."""
+        if fecha_nac:
+            paciente.fecha_nac = datetime.strptime(fecha_nac, "%Y-%m-%d")
+            paciente.edad = paciente.calcular_edad()
+
+    def _actualizar_historial(self, paciente, historial_enfermedades):
+        """Actualiza el historial de enfermedades del paciente si se proporciona uno nuevo."""
+        if historial_enfermedades:
+            paciente.historial_enfermedades.extend(historial_enfermedades)
+
+    def _actualizar_medicamentos(self, paciente, medicamentos):
+        """Actualiza la lista de medicamentos del paciente si se proporciona una nueva."""
+        if medicamentos:
+            paciente.medicamentos.extend(medicamentos)
     
     def __str__(self):
         """
