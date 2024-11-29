@@ -1,6 +1,7 @@
 # src/menu.py
 import os
 from gestion import SistemaGestionPacientes, Paciente, gestion_pacientes
+from gestion import Paciente
 from estructuras import ArbolGeneral
 from estructuras import ColaPrioridades
 from estructuras import Grafo
