@@ -1,6 +1,6 @@
 # src/sistema_gestion_pacientes.py
 
-from .paciente import GestionPacientes
+from .gestion_pacientes import GestionPacientes
 from estructuras.arbol_binario import ArbolBinarioBusqueda
 
 class SistemaGestionPacientes:

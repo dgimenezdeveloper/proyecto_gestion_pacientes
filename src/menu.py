@@ -1,7 +1,6 @@
 # src/menu.py
 import os
-from gestion import SistemaGestionPacientes
-from gestion import Paciente
+from gestion import SistemaGestionPacientes, Paciente, gestion_pacientes
 from estructuras import ArbolGeneral
 from estructuras import ColaPrioridades
 from estructuras import Grafo
@@ -22,12 +21,7 @@ def menu_principal():
 
     opcion = None
     while opcion != "5":
-        print("\nMenú Principal")
-        print("1. Gestión de Pacientes")
-        print("2. Operaciones con Pacientes")
-        print("3. Gestión de Hospitales")
-        print("4. Gestión de Diagnósticos")
-        print("5. Salir")
+        mostrar_menu_principal()
         opcion = input("Seleccione una opción: ")
 
         if opcion == "1":
@@ -43,16 +37,19 @@ def menu_principal():
         else:
             print("Opción no válida. Intente de nuevo.")
 
+def mostrar_menu_principal():
+    print("\nMenú Principal")
+    print("1. Gestión de Pacientes")
+    print("2. Operaciones con Pacientes")
+    print("3. Gestión de Hospitales")
+    print("4. Gestión de Diagnósticos")
+    print("5. Salir")
+
 def menu_gestion_pacientes(sistema_gestion):
     opcion = None
     while opcion != "5":
         os.system('clear')
-        print("\nGestión de Pacientes")
-        print("1. Agregar un nuevo paciente")
-        print("2. Eliminar un paciente existente")
-        print("3. Obtener información de un paciente")
-        print("4. Actualizar información de un paciente")
-        print("5. Volver al Menú Principal")
+        mostrar_menu_gestion_pacientes()
         opcion = input("Seleccione una opción: ")
 
         if opcion == "1":
@@ -89,34 +86,32 @@ def menu_gestion_pacientes(sistema_gestion):
             input("Presione Enter para continuar...")
         elif opcion == "4":
             dni = solicitar_dni()
-            sub_opcion = None
-            while sub_opcion != "5":
-                os.system('clear')
-                print("\nActualizar Información del Paciente")
-                print("1. Actualizar nombre")
-                print("2. Actualizar fecha de nacimiento")
-                print("3. Actualizar historial de enfermedades")
-                print("4. Actualizar medicamentos")
-                print("5. Volver al menú anterior")
-                sub_opcion = input("Seleccione una opción: ")
+            paciente = sistema_gestion.obtener_paciente(dni)
+            if paciente:
+                sub_opcion = None
+                while sub_opcion != "5":
+                    os.system('clear')
+                    print("\nActualizar Información del Paciente")
+                    mostrar_submenu_actualizar_paciente()
+                    sub_opcion = input("Seleccione una opción: ")
 
-                if sub_opcion == "1":
-                    nombre = solicitar_nombre()
-                    sistema_gestion.actualizar_paciente(dni, nombre=nombre)
-                elif sub_opcion == "2":
-                    fecha_nac = solicitar_fecha_nacimiento()
-                    sistema_gestion.actualizar_paciente(dni, fecha_nac=fecha_nac)
-                elif sub_opcion == "3":
-                    historial_enfermedades = solicitar_lista("Ingrese historial de enfermedades (separadas por comas): ")
-                    sistema_gestion.actualizar_paciente(dni, historial_enfermedades=historial_enfermedades)
-                elif sub_opcion == "4":
-                    medicamentos = solicitar_lista("Ingrese medicamentos (separados por comas): ")
-                    sistema_gestion.actualizar_paciente(dni, medicamentos=medicamentos)
-                elif sub_opcion == "5":
-                    print("Volviendo al menú anterior...")
-                else:
-                    print("Opción no válida. Intente de nuevo.")
-                input("Presione Enter para continuar...")
+                    if sub_opcion == "1":
+                        nombre = solicitar_nombre()
+                        sistema_gestion.actualizar_paciente(dni, nombre=nombre)
+                    elif sub_opcion == "2":
+                        fecha_nac = solicitar_fecha_nacimiento()
+                        sistema_gestion.actualizar_paciente(dni, fecha_nac=fecha_nac)
+                    elif sub_opcion == "3":
+                        historial_enfermedades = solicitar_lista("Ingrese historial de enfermedades (separadas por comas): ")
+                        sistema_gestion.actualizar_paciente(dni, historial_enfermedades=historial_enfermedades)
+                    elif sub_opcion == "4":
+                        medicamentos = solicitar_lista("Ingrese medicamentos (separados por comas): ")
+                        sistema_gestion.actualizar_paciente(dni, medicamentos=medicamentos)
+                    elif sub_opcion == "5":
+                        print("Volviendo al menú anterior...")
+                    else:
+                        print("Opción no válida. Intente de nuevo.")
+                    input("Presione Enter para continuar...")
         elif opcion == "5":
             print("Volviendo al Menú Principal...")
         else:
@@ -124,14 +119,25 @@ def menu_gestion_pacientes(sistema_gestion):
         input("Presione Enter para continuar...")
         os.system('clear')
 
+def mostrar_menu_gestion_pacientes():
+    print("\nGestión de Pacientes")
+    print("1. Agregar.")
+    print("2. Eliminar.")
+    print("3. Obtener información.")
+    print("4. Actualizar información.")
+    print("5. Volver al Menú Principal.")
+
+def mostrar_submenu_actualizar_paciente():
+    print("1. Actualizar nombre")
+    print("2. Actualizar fecha de nacimiento")
+    print("3. Actualizar historial de enfermedades")
+    print("4. Actualizar medicamentos")
+    print("5. Volver al menú anterior")
+
 def menu_operaciones_pacientes(sistema_gestion):
     opcion = None
     while opcion != "4":
-        print("\nOperaciones con Pacientes")
-        print("1. Registrar un nuevo paciente")
-        print("2. Buscar un paciente por DNI")
-        print("3. Eliminar un paciente por DNI")
-        print("4. Volver al Menú Principal")
+        mostrar_menu_operaciones_pacientes()
         opcion = input("Seleccione una opción: ")
 
         if opcion == "1":
@@ -154,16 +160,17 @@ def menu_operaciones_pacientes(sistema_gestion):
         else:
             print("Opción no válida. Intente de nuevo.")
 
+def mostrar_menu_operaciones_pacientes():
+    print("\nOperaciones con Pacientes")
+    print("1. Registrar un nuevo paciente")
+    print("2. Buscar un paciente por DNI")
+    print("3. Eliminar un paciente por DNI")
+    print("4. Volver al Menú Principal")
+
 def menu_gestion_hospitales(grafo):
     opcion = None
     while opcion != "6":
-        print("\nGestión de Hospitales")
-        print("1. Agregar un nuevo hospital")
-        print("2. Agregar una conexión entre hospitales")
-        print("3. Buscar una ruta entre hospitales")
-        print("4. Buscar una ruta más corta entre hospitales")
-        print("5. Calcular distancias desde un hospital")
-        print("6. Volver al Menú Principal")
+        mostrar_menu_gestion_hospitales()
         opcion = input("Seleccione una opción: ")
 
         if opcion == "1":
@@ -192,13 +199,20 @@ def menu_gestion_hospitales(grafo):
         else:
             print("Opción no válida. Intente de nuevo.")
 
+def mostrar_menu_gestion_hospitales():
+    print("\nGestión de Hospitales")
+    print("1. Agregar un nuevo hospital")
+    print("2. Agregar una conexión entre hospitales")
+    print("3. Buscar una ruta entre hospitales")
+    print("4. Buscar una ruta más corta entre hospitales")
+    print("5. Calcular distancias desde un hospital")
+    print("6. Volver al Menú Principal")
+
 def menu_gestion_diagnosticos(grafo_diagnostico):
     continuar = True
     while continuar:
         os.system('clear')
-        print("\nGestión de Diagnósticos")
-        print("1. Buscar pasos para diagnóstico")
-        print("2. Volver al Menú Principal")
+        mostrar_menu_gestion_diagnosticos()
         opcion = input("Seleccione una opción: ")
 
         if opcion == "1":
@@ -216,3 +230,8 @@ def menu_gestion_diagnosticos(grafo_diagnostico):
         else:
             print("Opción no válida. Intente de nuevo.")
             input("\nPresione Enter para continuar...")
+
+def mostrar_menu_gestion_diagnosticos():
+    print("\nGestión de Diagnósticos")
+    print("1. Encontrar pasos para un diagnóstico")
+    print("2. Volver al Menú Principal")

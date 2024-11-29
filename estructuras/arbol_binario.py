@@ -1,5 +1,5 @@
 # src/arbol_binario.py
-from gestion.paciente import Paciente, GestionPacientes
+
 
 class NodoArbol:
     """
