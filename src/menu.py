@@ -1,10 +1,7 @@
 # src/menu.py
 import os
 from gestion import SistemaGestionPacientes, Paciente, gestion_pacientes
-from gestion import Paciente
-from estructuras import ArbolGeneral
-from estructuras import ColaPrioridades
-from estructuras import Grafo
+from estructuras import ArbolGeneral, ColaPrioridades, Grafo
 from datos import obtener_datos_diagnosticos, cargar_datos_hospitales
 from utils import solicitar_dni, solicitar_nombre, solicitar_fecha_nacimiento, solicitar_lista
 
@@ -184,14 +181,23 @@ def menu_gestion_hospitales(grafo):
             grafo.agregar_arista(hospital1, hospital2, peso)
         elif opcion == "3":
             hospital1 = input("Ingrese el nombre del hospital de inicio: ")
-            hospital2 = input("Ingrese el nombre del hospital de destino: ")
-            ruta = grafo.dfs(hospital1, hospital2)
+            if hospital1 in grafo.vertices:
+                hospital2 = input("Ingrese el nombre del hospital de destino: ")
+                ruta = grafo.dfs(hospital1, hospital2)
+                if ruta is None:
+                    print("No se encontró una ruta entre los hospitales.")
+                else:
+                    print("Ruta encontrada:", ruta)
             print(f"Ruta: {ruta}")
         elif opcion == "4":
             hospital1 = input("Ingrese el nombre del hospital de inicio: ")
-            hospital2 = input("Ingrese el nombre del hospital de destino: ")
-            ruta = grafo.bfs(hospital1, hospital2)
-            print(f"Ruta más corta: {ruta}")
+            if hospital1 in grafo.vertices:
+                hospital2 = input("Ingrese el nombre del hospital de destino: ")
+                ruta = grafo.bfs(hospital1, hospital2)
+                if ruta is None:
+                    print("No se encontró una ruta entre los hospitales.")
+                else:
+                    print("Ruta más corta:", ruta)
         elif opcion == "5":
             hospital = input("Ingrese el nombre del hospital: ")
             grafo.imprimir_dijkstra(hospital)
