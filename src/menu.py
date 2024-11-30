@@ -1,8 +1,9 @@
 # src/menu.py
-import os
+import os, csv
 from gestion import SistemaGestionPacientes, Paciente, gestion_pacientes
 from estructuras import ArbolGeneral, ColaPrioridades, Grafo
 from datos import obtener_datos_diagnosticos, cargar_datos_hospitales
+from datos.datos_pacientes import cargar_datos_csv
 from utils import solicitar_dni, solicitar_nombre, solicitar_fecha_nacimiento, solicitar_lista
 
 def menu_principal():
@@ -16,6 +17,9 @@ def menu_principal():
     grafo_diagnostico.cargar_datos(vertices, aristas)
     
     cargar_datos_hospitales(grafo)
+    #Cargar datos de pacientes
+    cargar_datos_csv(sistema_gestion, './datos/pacientes.csv')
+
 
     opcion = None
     while opcion != "5":
