@@ -49,8 +49,18 @@ El programa es un sistema de gestión de pacientes y hospitales que permite real
    - **Modelado de Relaciones**: Los grafos son ideales para modelar relaciones entre entidades, como hospitales y diagnósticos. Permiten representar conexiones y rutas entre diferentes nodos (hospitales o síntomas).
    - **Algoritmos de Búsqueda**: Los algoritmos de búsqueda en grafos, como DFS y BFS, son útiles para encontrar rutas y conexiones entre nodos. Estos algoritmos tienen una complejidad de \(O(V + E)\), donde \(V\) es el número de vértices y \(E\) es el número de aristas.
    - **Algoritmo de Dijkstra**: Utilizado para encontrar las rutas más cortas entre hospitales, es eficiente para grafos con pesos no negativos y tiene una complejidad de \(O((V + E) \log V)\) utilizando una cola de prioridades.
+   
+   **Grafo Hospitales**
+   - Tipo: No dirigido.
+   - Descripción: En este grafo, los hospitales son representados como nodos (o vértices), y las conexiones (o aristas) entre ellos representan las rutas o distancias entre los hospitales. Las aristas pueden tener un peso asociado, que generalmente representa la distancia o el costo de trasladarse de un hospital a otro. Dado que las conexiones entre hospitales no tienen una dirección específica (es decir, se puede ir de Hospital A a Hospital B y viceversa), se considera un grafo no dirigido.
+   - Uso: Este tipo de grafo es útil para realizar búsquedas de rutas, calcular distancias y encontrar conexiones entre diferentes hospitales.
 
-4. **Cola de Prioridade**:
+   **Grafo Diagnósticos**
+   - Tipo: También puede ser no dirigido, dependiendo de cómo se modelen las relaciones.
+   - Descripción: En este caso, los síntomas y diagnósticos son representados como nodos, y las conexiones entre ellos pueden representar relaciones de causa-efecto o pasos necesarios para llegar a un diagnóstico a partir de un síntoma. Si las relaciones son bidireccionales (por ejemplo, un síntoma puede estar relacionado con múltiples diagnósticos y viceversa), se trataría de un grafo no dirigido. Sin embargo, si se considera que hay una dirección en el proceso (de síntoma a diagnóstico), podría ser un grafo dirigido.
+   - Uso: Este grafo permite realizar búsquedas para encontrar diagnósticos a partir de síntomas, facilitando la identificación de pasos necesarios para llegar a un diagnóstico médico.
+
+4. **Cola de Prioridades**:
    - **Gestión de Prioridades**: Las colas de prioridades son útiles para gestionar elementos con prioridades, como en el algoritmo de Dijkstra. Permiten insertar elementos y extraer el elemento con la prioridad más alta en tiempo \(O(\log n)\).
 
 ### Conclusión
