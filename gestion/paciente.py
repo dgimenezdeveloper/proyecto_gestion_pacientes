@@ -20,7 +20,7 @@ class Paciente:
         self.id = id
         self.nombre = nombre
         self.fecha_nac = datetime.strptime(fecha_nac, "%Y-%m-%d")  # Convierte la cadena a datetime
-        self.edad = self.calcular_edad() # Calcular despues
+        self.edad = 0 
         self.historial_enfermedades = historial_enfermedades if historial_enfermedades else []
         self.medicamentos = medicamentos if medicamentos else []
 
