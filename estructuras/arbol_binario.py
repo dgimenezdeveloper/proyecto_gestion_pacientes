@@ -1,6 +1,10 @@
 # src/arbol_binario.py
 
 
+from gestion_pacientes import GestionPacientes
+from paciente import Paciente
+
+
 class NodoArbol:
     """
     Clase que representa un nodo en un árbol binario de búsqueda.
