@@ -1,8 +1,4 @@
-# src/arbol_binario.py
 
-
-from gestion_pacientes import GestionPacientes
-from paciente import Paciente
 
 
 class NodoArbol:
@@ -174,98 +170,98 @@ class ArbolBinarioBusqueda:
             self._in_order(nodo.derecha, nodos)
     
     
-def main():
-    # Crear pacientes
-    paciente1 = Paciente(1, "Juan Pérez", "1990-01-01", ["Gripe", "Fiebre"], ["Paracetamol", "Ibuprofeno"])
-    paciente2 = Paciente(2, "Ana López", "1985-05-10", ["Covid-19", "Asma"], ["Remdesivir", "Salbutamol"])
-    paciente3 = Paciente(3, "Luis García", "1975-03-22", ["Diabetes", "Hipertensión"], ["Insulina", "Lisinopril"])
-    paciente4 = Paciente(4, "María Fernández", "2000-07-15", ["Alergia", "Migraña"], ["Loratadina", "Sumatriptán"])
+# def main():
+#     # Crear pacientes
+#     paciente1 = Paciente(1, "Juan Pérez", "1990-01-01", ["Gripe", "Fiebre"], ["Paracetamol", "Ibuprofeno"])
+#     paciente2 = Paciente(2, "Ana López", "1985-05-10", ["Covid-19", "Asma"], ["Remdesivir", "Salbutamol"])
+#     paciente3 = Paciente(3, "Luis García", "1975-03-22", ["Diabetes", "Hipertensión"], ["Insulina", "Lisinopril"])
+#     paciente4 = Paciente(4, "María Fernández", "2000-07-15", ["Alergia", "Migraña"], ["Loratadina", "Sumatriptán"])
 
-    # Crear una colección de pacientes usando GestionPacientes
-    gestion_pacientes = GestionPacientes()
-    gestion_pacientes.agregar_paciente(paciente1)
-    gestion_pacientes.agregar_paciente(paciente2)
-    gestion_pacientes.agregar_paciente(paciente3)
-    gestion_pacientes.agregar_paciente(paciente4)
+#     # Crear una colección de pacientes usando GestionPacientes
+#     gestion_pacientes = GestionPacientes()
+#     gestion_pacientes.agregar_paciente(paciente1)
+#     gestion_pacientes.agregar_paciente(paciente2)
+#     gestion_pacientes.agregar_paciente(paciente3)
+#     gestion_pacientes.agregar_paciente(paciente4)
 
-    # Crear un árbol binario de búsqueda
-    arbol = ArbolBinarioBusqueda()
-    arbol.insertar(1, paciente1)
-    arbol.insertar(2, paciente2)
-    arbol.insertar(3, paciente3)
-    arbol.insertar(4, paciente4)
+#     # Crear un árbol binario de búsqueda
+#     arbol = ArbolBinarioBusqueda()
+#     arbol.insertar(1, paciente1)
+#     arbol.insertar(2, paciente2)
+#     arbol.insertar(3, paciente3)
+#     arbol.insertar(4, paciente4)
 
-    # Mostrar la colección de pacientes usando GestionPacientes
-    print("Colección de pacientes (GestionPacientes):")
-    print(gestion_pacientes)
+#     # Mostrar la colección de pacientes usando GestionPacientes
+#     print("Colección de pacientes (GestionPacientes):")
+#     print(gestion_pacientes)
 
-    # Mostrar la colección de pacientes usando ArbolBinarioBusqueda
-    print("\nColección de pacientes (ArbolBinarioBusqueda):")
-    print(arbol)
+#     # Mostrar la colección de pacientes usando ArbolBinarioBusqueda
+#     print("\nColección de pacientes (ArbolBinarioBusqueda):")
+#     print(arbol)
 
-    # Obtener y mostrar un paciente usando GestionPacientes
-    print("\nObtener paciente con ID 2 (GestionPacientes):")
-    paciente = gestion_pacientes.obtener_paciente(2)
-    print(paciente)
+#     # Obtener y mostrar un paciente usando GestionPacientes
+#     print("\nObtener paciente con ID 2 (GestionPacientes):")
+#     paciente = gestion_pacientes.obtener_paciente(2)
+#     print(paciente)
 
-    # Obtener y mostrar un paciente usando ArbolBinarioBusqueda
-    print("\nObtener paciente con ID 2 (ArbolBinarioBusqueda):")
-    paciente = arbol.buscar(2)
-    print(paciente)
+#     # Obtener y mostrar un paciente usando ArbolBinarioBusqueda
+#     print("\nObtener paciente con ID 2 (ArbolBinarioBusqueda):")
+#     paciente = arbol.buscar(2)
+#     print(paciente)
 
-    # Actualizar un paciente usando GestionPacientes
-    print("\nActualizar paciente con ID 3 (GestionPacientes):")
-    gestion_pacientes.actualizar_paciente(3, nombre="Luis Pérez", historial_enfermedades=["Diabetes", "Hipertensión", "Colesterol"], medicamentos=["Insulina", "Lisinopril", "Atorvastatina"])
-    paciente = gestion_pacientes.obtener_paciente(3)
-    print(paciente)
+#     # Actualizar un paciente usando GestionPacientes
+#     print("\nActualizar paciente con ID 3 (GestionPacientes):")
+#     gestion_pacientes.actualizar_paciente(3, nombre="Luis Pérez", historial_enfermedades=["Diabetes", "Hipertensión", "Colesterol"], medicamentos=["Insulina", "Lisinopril", "Atorvastatina"])
+#     paciente = gestion_pacientes.obtener_paciente(3)
+#     print(paciente)
 
-    # Eliminar un paciente usando GestionPacientes
-    print("\nEliminar paciente con ID 1 (GestionPacientes):")
-    gestion_pacientes.eliminar_paciente(1)
-    print(gestion_pacientes)
+#     # Eliminar un paciente usando GestionPacientes
+#     print("\nEliminar paciente con ID 1 (GestionPacientes):")
+#     gestion_pacientes.eliminar_paciente(1)
+#     print(gestion_pacientes)
 
-    # Eliminar un paciente usando ArbolBinarioBusqueda
-    print("\nEliminar paciente con ID 1 (ArbolBinarioBusqueda):")
-    arbol.eliminar(1)
-    print(arbol)
+#     # Eliminar un paciente usando ArbolBinarioBusqueda
+#     print("\nEliminar paciente con ID 1 (ArbolBinarioBusqueda):")
+#     arbol.eliminar(1)
+#     print(arbol)
 
-    # Mostrar cómo el árbol binario de búsqueda puede ser útil para operaciones de rango
-    print("\nPacientes en el rango de ID 2 a 4 (ArbolBinarioBusqueda):")
-    pacientes_en_rango = obtener_pacientes_en_rango(arbol, 2, 4)
-    for paciente in pacientes_en_rango:
-        print(paciente)
+#     # Mostrar cómo el árbol binario de búsqueda puede ser útil para operaciones de rango
+#     print("\nPacientes en el rango de ID 2 a 4 (ArbolBinarioBusqueda):")
+#     pacientes_en_rango = obtener_pacientes_en_rango(arbol, 2, 4)
+#     for paciente in pacientes_en_rango:
+#         print(paciente)
 
-# Caso de uso cuando se requiere usar una busqueda  binaria en lugar de la clase  GestionPacientes
-def obtener_pacientes_en_rango(arbol, id_min, id_max):
-    """
-    Obtiene una lista de pacientes cuyos IDs están en el rango [id_min, id_max].
+# # Caso de uso cuando se requiere usar una busqueda  binaria en lugar de la clase  GestionPacientes
+# def obtener_pacientes_en_rango(arbol, id_min, id_max):
+#     """
+#     Obtiene una lista de pacientes cuyos IDs están en el rango [id_min, id_max].
 
-    :param arbol: El árbol binario de búsqueda.
-    :param id_min: El ID mínimo del rango.
-    :param id_max: El ID máximo del rango.
-    :return: Una lista de pacientes en el rango especificado.
-    """
-    resultado = []
-    _obtener_pacientes_en_rango_recursivo(arbol.raiz, id_min, id_max, resultado)
-    return resultado
+#     :param arbol: El árbol binario de búsqueda.
+#     :param id_min: El ID mínimo del rango.
+#     :param id_max: El ID máximo del rango.
+#     :return: Una lista de pacientes en el rango especificado.
+#     """
+#     resultado = []
+#     _obtener_pacientes_en_rango_recursivo(arbol.raiz, id_min, id_max, resultado)
+#     return resultado
 
-def _obtener_pacientes_en_rango_recursivo(nodo, id_min, id_max, resultado):
-    """
-    Función auxiliar recursiva para obtener pacientes en un rango de IDs.
+# def _obtener_pacientes_en_rango_recursivo(nodo, id_min, id_max, resultado):
+#     """
+#     Función auxiliar recursiva para obtener pacientes en un rango de IDs.
 
-    :param nodo: El nodo actual del árbol binario de búsqueda.
-    :param id_min: El ID mínimo del rango.
-    :param id_max: El ID máximo del rango.
-    :param resultado: La lista de resultados para almacenar los pacientes.
-    """
-    if nodo is None:
-        return
-    if id_min <= nodo.id_paciente <= id_max:
-        resultado.append(nodo.paciente)
-    if id_min < nodo.id_paciente:
-        _obtener_pacientes_en_rango_recursivo(nodo.izquierda, id_min, id_max, resultado)
-    if nodo.id_paciente < id_max:
-        _obtener_pacientes_en_rango_recursivo(nodo.derecha, id_min, id_max, resultado)
+#     :param nodo: El nodo actual del árbol binario de búsqueda.
+#     :param id_min: El ID mínimo del rango.
+#     :param id_max: El ID máximo del rango.
+#     :param resultado: La lista de resultados para almacenar los pacientes.
+#     """
+#     if nodo is None:
+#         return
+#     if id_min <= nodo.id_paciente <= id_max:
+#         resultado.append(nodo.paciente)
+#     if id_min < nodo.id_paciente:
+#         _obtener_pacientes_en_rango_recursivo(nodo.izquierda, id_min, id_max, resultado)
+#     if nodo.id_paciente < id_max:
+#         _obtener_pacientes_en_rango_recursivo(nodo.derecha, id_min, id_max, resultado)
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()

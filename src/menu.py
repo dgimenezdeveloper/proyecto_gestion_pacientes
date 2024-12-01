@@ -18,9 +18,9 @@ def menu_principal():
     
     cargar_datos_hospitales(grafo)
     #Cargar datos de pacientes
-    cargar_datos_csv(sistema_gestion, './datos/pacientes.csv')
+    cargar_datos_csv(sistema_gestion, '../datos/pacientes.csv')
 
-
+    os.system('clear')
     opcion = None
     while opcion != "5":
         mostrar_menu_principal()
@@ -138,6 +138,7 @@ def mostrar_submenu_actualizar_paciente():
 
 def menu_operaciones_pacientes(sistema_gestion):
     opcion = None
+    os.system('clear')
     while opcion != "4":
         mostrar_menu_operaciones_pacientes()
         opcion = input("Seleccione una opción: ")
@@ -159,6 +160,7 @@ def menu_operaciones_pacientes(sistema_gestion):
             sistema_gestion.eliminar_paciente(dni)
         elif opcion == "4":
             print("Volviendo al Menú Principal...")
+            os.system('clear')
         else:
             print("Opción no válida. Intente de nuevo.")
 
@@ -171,6 +173,7 @@ def mostrar_menu_operaciones_pacientes():
 
 def menu_gestion_hospitales(grafo):
     opcion = None
+    os.system('clear')
     while opcion != "6":
         mostrar_menu_gestion_hospitales()
         opcion = input("Seleccione una opción: ")
@@ -207,6 +210,7 @@ def menu_gestion_hospitales(grafo):
             grafo.imprimir_dijkstra(hospital)
         elif opcion == "6":
             print("Volviendo al Menú Principal...")
+            os.system('clear')
         else:
             print("Opción no válida. Intente de nuevo.")
 
@@ -238,6 +242,7 @@ def menu_gestion_diagnosticos(grafo_diagnostico):
             input("\nPresione Enter para continuar...")
         elif opcion == "2":
             continuar = False
+            os.system('clear')
         else:
             print("Opción no válida. Intente de nuevo.")
             input("\nPresione Enter para continuar...")

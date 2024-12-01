@@ -1,5 +1,9 @@
 from time import time
 import csv
+
+import sys, os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../')))
+
 from estructuras.arbol_binario import ArbolBinarioBusqueda
 from gestion.gestion_pacientes import GestionPacientes
 from gestion.paciente import Paciente
