@@ -18,7 +18,7 @@ def menu_principal():
     
     cargar_datos_hospitales(grafo)
     #Cargar datos de pacientes
-    cargar_datos_csv(sistema_gestion, '../datos/pacientes.csv')
+    cargar_datos_csv(sistema_gestion, 'datos/pacientes.csv')
 
     os.system('clear')
     opcion = None
