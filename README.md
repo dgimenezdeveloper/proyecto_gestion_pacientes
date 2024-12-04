@@ -18,26 +18,44 @@ Este programa es un sistema de gestión de pacientes y hospitales que permite re
 
 ## Estructura del Proyecto
 
-- `src/`
-  - `main.py`: Punto de entrada del programa.
-  - `menu.py`: Contiene las funciones para mostrar los menús y gestionar las opciones seleccionadas por el usuario.
-  - `gestion/`
-    - `__init__.py`: Inicializa el módulo de gestión.
-    - `sistema_gestion_pacientes.py`: Contiene la clase `SistemaGestionPacientes` para gestionar pacientes.
-    - `paciente.py`: Contiene las clases `Paciente` y `GestionPacientes`.
-  - `datos/`
-    - `__init__.py`: Inicializa el módulo de datos.
-    - `datos_diagnosticos.py`: Contiene la función `obtener_datos_diagnosticos`.
-    - `datos_hospitales.py`: Contiene las funciones `obtener_datos_hospitales` y `cargar_datos_hospitales`.
-  - `estructuras/`
-    - `__init__.py`: Inicializa el módulo de estructuras.
-    - `arbol_binario.py`: Contiene las clases `ArbolBinarioBusqueda` y `NodoArbol`.
-    - `arbol_general.py`: Contiene las clases `ArbolGeneral` y `NodoGeneral`.
-    - `cola_prioridades.py`: Contiene la clase `ColaPrioridades`.
-    - `grafo.py`: Contiene la clase `Grafo`.
-  - `utils/`
-    - `__init__.py`: Inicializa el módulo de utilidades.
-    - `inputs.py`: Contiene funciones para solicitar datos al usuario.
+```
+.
+├── .gitignore                        # Archivo para ignorar archivos en Git
+├── .vscode/                          # Configuraciones del entorno de desarrollo para Visual Studio Code
+│   └── settings.json                 # Configuraciones específicas del proyecto
+├── analisis_algoritmico/                           # Módulo para análisis algorítmico
+│   ├── __init__.py                   # Inicialización del módulo
+│   └── analisis_algoritmico.py       # Análisis de complejidad algorítmica
+├── datos/                            # Módulo para manejar datos
+│   ├── __init__.py                   # Inicialización del módulo
+│   ├── datos_diagnosticos.py         # Datos de diagnósticos médicos
+│   ├── datos_hospitales.py           # Datos y conexiones entre hospitales
+│   ├── datos_pacientes.py            # Datos de pacientes
+│   ├── generar_dataset.py            # Generador de datos ficticios
+│   └── pacientes.csv                 # Archivo CSV con datos de pacientes
+├── estructuras/                      # Módulo para estructuras de datos
+│   ├── __init__.py                   # Inicialización del módulo
+│   ├── arbol_binario.py              # Implementación de árbol binario de búsqueda
+│   ├── arbol_general.py              # Implementación de árbol general
+│   ├── cola_prioridades.py           # Implementación de cola de prioridades
+│   └── grafo.py                      # Implementación de grafo
+├── gestion/                          # Módulo para la gestión de pacientes y hospitales
+│   ├── __init__.py                   # Inicialización del módulo
+│   ├── gestion_pacientes.py          # Gestión de la colección de pacientes
+│   ├── paciente.py                   # Clase que representa a un paciente
+│   └── sistema_gestion_pacientes.py  # Sistema de gestión de pacientes
+├── LICENSE                           # Archivo de licencia del proyecto
+├── notas_informe.md                  # Notas y reflexiones sobre el informe del proyecto
+├── README.md                         # Documentación principal del proyecto
+├── src/                              # Directorio principal del código fuente
+│   ├── __init__.py                   # Inicialización del módulo
+│   ├── main.py                       # Punto de entrada principal de la aplicación
+│   └── config.py                     # Configuración global del proyecto
+└── utils/                            # Módulo de utilidades
+    ├── __init__.py                   # Inicialización del módulo
+    ├── inputs.py                     # Funciones para solicitar entradas al usuario
+    └── logger.py                     # Configuración y manejo de logs del sistema
+```
 
 ## Uso
 1. Ejecuta el programa:
@@ -59,27 +77,3 @@ Las contribuciones son bienvenidas. Si deseas contribuir, por favor sigue estos 
 
 ## Licencia
 Este proyecto está bajo la Licencia MIT. Consulta el archivo \`LICENSE\` para más detalles."
-
-## Estructura del Proyecto
-
-```plaintext
-📁 src/
-├── main.py                     # Punto de entrada principal del programa.
-├── menu.py                     # Maneja los menús interactivos.
-├── gestion/
-│   ├── __init__.py             # Inicialización del módulo de gestión.
-│   ├── sistema_gestion_pacientes.py  # Clase para gestionar pacientes.
-│   └── paciente.py             # Clases relacionadas con pacientes.
-├── datos/
-│   ├── __init__.py             # Inicialización del módulo de datos.
-│   ├── datos_diagnosticos.py   # Datos de diagnósticos médicos.
-│   └── datos_hospitales.py     # Datos y conexiones entre hospitales.
-├── estructuras/
-│   ├── __init__.py             # Inicialización del módulo de estructuras.
-│   ├── arbol_binario.py        # Árbol binario de búsqueda.
-│   ├── arbol_general.py        # Árbol general para modelado de datos.
-│   ├── cola_prioridades.py     # Cola de prioridades.
-│   └── grafo.py                # Grafo para modelado de relaciones.
-└── utils/
-    ├── __init__.py             # Inicialización del módulo de utilidades.
-    └── inputs.py               # Funciones auxiliares para entradas de usuario.
