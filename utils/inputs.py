@@ -13,6 +13,18 @@ def solicitar_dni():
         except ValueError:
             print("Error: El DNI debe ser un número entero.")
 
+def solcitar_rango_dni():
+    while True:
+        try:
+            minimo = int(input("Ingrese el mínimo del rango de DNI: ").strip())
+            maximo = int(input("Ingrese el máximo del rango de DNI: ").strip())
+            if minimo > maximo:
+                print("Error: El mínimo del rango no puede ser mayor que el máximo.")
+                continue
+            return minimo, maximo
+        except ValueError:
+            print("Error: El rango debe ser un número entero.")
+
 def solicitar_nombre():
     while True:
         nombre = input("Nombre: ").strip()
