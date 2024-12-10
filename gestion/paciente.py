@@ -20,7 +20,7 @@ class Paciente:
         self.id = id
         self.nombre = nombre
         self.fecha_nac = datetime.strptime(fecha_nac, "%Y-%m-%d")  # Convierte la cadena a datetime
-        self.edad = 0 
+        #self.edad = 0 
         self.historial_enfermedades = historial_enfermedades if historial_enfermedades else []
         self.medicamentos = medicamentos if medicamentos else []
 
@@ -92,4 +92,4 @@ class Paciente:
         - Retorna:
             * (str): Una cadena que representa al paciente.
         """
-        return f"Nombre Paciente: {self.nombre}\nEdad: {self.edad}\nEnfermedades: {self.historial_enfermedades}\nMedicamentos: {self.medicamentos}"
+        return f"DNI: {self.id}\nNombre Paciente: {self.nombre}\nEdad: {self.calcular_edad()}\nEnfermedades: {self.historial_enfermedades}\nMedicamentos: {self.medicamentos}\n"
