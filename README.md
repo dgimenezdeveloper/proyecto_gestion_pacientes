@@ -1,3 +1,6 @@
+# TRABAJO FINAL - ESTRUCTURAS DE DATOS (EDD) - UNAB, 2024
+Este proyecto representa el trabajo final de la asignatura ESTRUCTURAS DE DATOS DE LA Universidad Nacional Guillermo Brown, con el objetivo primordial de aplicar y aprovechar el conocimiento adquirido durante el curso sobre diversas estructuras de datos. La implementación de estas estructuras eficientes en el sistema de gestión de pacientes y hospitales permite optimizar el análisis y procesamiento de grandes volúmenes de datos médicos, lo que a su vez mejora la calidad de la atención médica y garantiza la escalabilidad y adaptabilidad del sistema a medida que crece la base de datos de pacientes y hospitales.
+
 # Sistema de Gestión de Pacientes y Hospitales
 
 Este programa es un sistema de gestión de pacientes y hospitales que permite realizar diversas operaciones relacionadas con la gestión de pacientes, hospitales y diagnósticos médicos.
