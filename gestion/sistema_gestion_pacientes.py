@@ -23,6 +23,19 @@ class SistemaGestionPacientes:
     def obtener_paciente(self, id):
         if self.gestion_pacientes.obtener_paciente(id) and self.arbol.buscar(id):
             return self.gestion_pacientes.obtener_paciente(id)
+    
+    def obtener_pacientes_rango(self, dni_min, dni_max):
+        return self.arbol.obtener_pacientes_rango(dni_min, dni_max)
+    
+    def buscar_por_enfermedad(self, clave):
+        return self.arbol.buscar_por_enfermedad(clave)
+    
+    def buscar_por_medicamento(self, clave):
+        return self.arbol.buscar_por_medicamento(clave)
+    
+    def listar_pacientes_ordenados(self):
+        return self.arbol.listar_pacientes_ordenados()
+    
 
     def actualizar_paciente(self, id, nombre=None, fecha_nac=None, historial_enfermedades=None, medicamentos=None):
         if self.gestion_pacientes.actualizar_paciente(id, nombre, fecha_nac, historial_enfermedades, medicamentos):
