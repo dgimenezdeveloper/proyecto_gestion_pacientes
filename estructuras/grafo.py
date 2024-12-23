@@ -95,3 +95,7 @@ class Grafo:
             if vecino not in visitados:
                 self._dfs_topologico(vecino, visitados, orden)
         orden.append(vertice)
+    
+    def imprimir_grafo(self):
+        for vertice, conexiones in self.vertices.items():
+            print(f"{vertice}: {conexiones}")
