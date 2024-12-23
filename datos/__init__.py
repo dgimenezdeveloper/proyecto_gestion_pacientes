@@ -1,2 +1,3 @@
 from .datos_diagnosticos import obtener_datos_diagnosticos
 from .datos_hospitales import cargar_datos_hospitales, obtener_datos_hospitales
+from .datos_pacientes import cargar_datos_csv
