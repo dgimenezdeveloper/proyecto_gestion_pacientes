@@ -1,5 +1,3 @@
-# src/sistema_gestion_pacientes.py
-
 from .gestion_pacientes import GestionPacientes
 from estructuras.arbol_binario import ArbolBinarioBusqueda
 
