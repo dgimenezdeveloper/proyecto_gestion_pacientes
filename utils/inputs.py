@@ -1,5 +1,3 @@
-# src/input_utils.py
-
 from datetime import datetime
 
 def solicitar_dni():
@@ -45,3 +43,14 @@ def solicitar_fecha_nacimiento():
 
 def solicitar_lista(mensaje):
     return input(mensaje).split(",")
+
+def solicitar_hospitales(cantidad):
+    if cantidad == 1:
+        hospital = input("Ingrese el nombre del hospital: ").strip()
+        return (hospital,)
+    elif cantidad == 2:
+        hospital1 = input("Ingrese el nombre del primer hospital: ").strip()
+        hospital2 = input("Ingrese el nombre del segundo hospital: ").strip()
+        return (hospital1, hospital2)
+    else:
+        raise ValueError("Cantidad inválida. Solo se permiten 1 o 2 hospitales.")
