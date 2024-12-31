@@ -33,18 +33,18 @@ def menu_gestion_hospitales(grafo):
 
 
 def menu_gestion_diagnosticos(grafo_diagnostico):
-    continuar = True
-    while continuar:
+    opcion = None
+    while opcion != 3:
         os.system("clear")
         mostrar_menu_gestion_diagnosticos()
         opcion = int(input("Seleccione una opción: "))
-        manejar_opcion_gestion_diagnosticos(opcion, grafo_diagnostico)
+        manejar_opcion_gestion_diagnosticos(opcion, grafo_diagnostico, menu_operaciones_diagnosticos)
         input("\nPresione Enter para continuar...")
 
 
 def menu_operaciones_diagnosticos(grafo_diagnostico):
-    continuar = True
-    while continuar:
+    opcion = None
+    while opcion != 6:
         os.system('clear')
         mostrar_menu_operaciones_diagnosticos()
         opcion = int(input("Seleccione una opción: "))
